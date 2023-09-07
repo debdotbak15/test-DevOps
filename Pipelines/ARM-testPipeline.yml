@@ -22,7 +22,7 @@ stages:
                   displayName: 'Deploy resource group'
                   inputs:
                     deploymentScope: 'Subscription'
-                    azureResourceManagerConnection: 'sp-devops-pipeline'
+                    azureResourceManagerConnection: 'sp-test-devops'
                     subscriptionId: '$(ARM.Subscription.Id)'
                     location: '$(ARM.ResourceGroup.Location)'
                     templateLocation: 'Linked artifact'
@@ -34,7 +34,7 @@ stages:
                   displayName: 'Deploy blob storage account for storing Terraform states'
                   inputs:
                     deploymentScope: 'Resource Group'
-                    azureResourceManagerConnection: 'sp-devops-pipeline'
+                    azureResourceManagerConnection: 'sp-test-devops'
                     subscriptionId: '$(ARM.Subscription.Id)'
                     action: 'Create Or Update Resource Group'
                     resourceGroupName: '$(ARM.ResourceGroup.Name)'
